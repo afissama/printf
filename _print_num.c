@@ -65,7 +65,7 @@ int _printb(unsigned int n)
 	{
 		tmp_n /= 2;
 	}
-	remains = malloc(i);
+	remains = malloc(i - 1);
 	i = 0;
 	for (; n > 0; i++)
 	{
@@ -73,8 +73,9 @@ int _printb(unsigned int n)
 		n /= 2;
 	}
 	rev_string(remains);
-
-	return (_prints(remains));
+	tmp_n = _prints(remains);
+	free(remains);
+	return (tmp_n);
 }
 
 /**
