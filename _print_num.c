@@ -51,17 +51,22 @@ int _printi(long n)
  * @n: int number to print
  * Return: number of digits
  */
-int _printb(long n)
+int _printb(unsigned int n)
 {
 	char *remains;
-	int i;
+	int i, tmp_n;
 
 	if (n == 0)
 	{
 		return (_printc('0'));
 	}
+	tmp_n  = n;
+	for (; tmp_n > 0; i++)
+	{
+		tmp_n /= 2;
+	}
+	remains = malloc(i);
 	i = 0;
-	remains = malloc(n + 1);
 	for (; n > 0; i++)
 	{
 		remains[i] = '0' + (n % 2);

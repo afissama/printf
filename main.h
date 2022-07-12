@@ -6,7 +6,7 @@ int _printf(const char *format, ...);
 int _printc(char c);
 int _prints(char *s);
 int _printi(long n);
-int _printb(long n);
+int _printb(unsigned int n);
 int _strlen(char *s);
 void rev_string(char *s);
 int _pow(int n, int p);
