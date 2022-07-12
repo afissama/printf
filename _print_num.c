@@ -56,6 +56,10 @@ int _printb(long n)
 	char *remains;
 	int i;
 
+	if (n == 0)
+	{
+		return (_printc('0'));
+	}
 	i = 0;
 	remains = malloc(n + 1);
 	for (; n > 0; i++)
