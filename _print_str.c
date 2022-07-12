@@ -19,14 +19,14 @@ int _printc(char c)
  */
 int _prints(char *s)
 {
-	int nb;
+	int nb, i;
 
-	nb = 0;
-	while (*s != '\0')
+	nb = 0, i = 0;
+	while (s[i] != '\0')
 	{
-		_printc(*s);
+		_printc(s[i]);
 		nb++;
-		++s;
+		i++;
 	}
 	return (nb);
 }
