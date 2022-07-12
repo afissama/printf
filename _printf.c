@@ -61,6 +61,8 @@ int check_frmt(char c, va_list ptr)
 		case 'i':
 		case 'd':
 			return (_printi(va_arg(ptr, int)));
+		case 'b':
+			return (_printb(va_arg(ptr, int)));
 		default:
 			return (0);
 	}

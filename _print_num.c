@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * _printi - print given number
  * @n: int number to print
@@ -42,6 +44,28 @@ int _printi(long n)
 	}
 
 	return (digits);
+}
+
+/**
+ * _printb - for a given integer it prints his binary equivalent
+ * @n: int number to print
+ * Return: number of digits
+ */
+int _printb(long n)
+{
+	char *remains;
+	int i;
+
+	i = 0;
+	remains = malloc(n + 1);
+	for (; n > 0; i++)
+	{
+		remains[i] = '0' + (n % 2);
+		n /= 2;
+	}
+	rev_string(remains);
+
+	return (_prints(remains));
 }
 
 /**
