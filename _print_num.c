@@ -4,11 +4,11 @@
  * @n: int number to print
  * Return: number of digits
  */
-int _printi(int n)
+int _printi(long n)
 {
 	int nb_digit = 0;
 	int digits;
-	int temp = n;
+	long temp = n;
 	int t_temp = 0;
 	int nb = 0;
 

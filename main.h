@@ -5,7 +5,7 @@
 int _printf(const char *format, ...);
 int _printc(char c);
 int _prints(char *s);
-int _printi(int n);
+int _printi(long n);
 int _pow(int n, int p);
 int _abs(int n);
 int check_frmt(char c, va_list ptr);
