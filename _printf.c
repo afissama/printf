@@ -11,22 +11,30 @@ int _printf(const char *out, ...)
 	int nb, i, tmp_n;
 	va_list ptr;
 
+	if (out == NULL)
+		return (-1);
+
 	nb = 0, i = 0;
 	va_start(ptr, out);
 	while (out[i] != '\0')
 	{
 		tmp_n = 0;
-		if (out[i] == '%' && out[i + 1] != '\0')
+		if (out[i] == '%')
 		{
-			tmp_n = check_frmt(out[i + 1], ptr);
-			nb += tmp_n;
-			if (tmp_n != 0)
+			if (out[i + 1] != '\0')
 			{
-				i = i + 2;
-				continue;
+				tmp_n = check_frmt(out[i + 1], ptr);
+				if (tmp_n != -1)
+				{
+					i = i + 2;
+					nb += tmp_n;
+					continue;
+				}
 			}
+			i++;
 		}
-		nb += _printc(out[i]);
+		if (out[i] != '\0')
+			nb += _printc(out[i]);
 		i++;
 	}
 	va_end(ptr);
@@ -64,6 +72,6 @@ int check_frmt(char c, va_list ptr)
 		case 'b':
 			return (_printb(va_arg(ptr, unsigned int)));
 		default:
-			return (0);
+			return (-1);
 	}
 }
