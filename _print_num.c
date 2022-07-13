@@ -1,6 +1,6 @@
-#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 /**
  * _printi - print given number
  * @n: int number to print

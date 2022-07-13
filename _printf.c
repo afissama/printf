@@ -1,4 +1,8 @@
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
+int check_frmt(char c, va_list ptr);
 /**
  * _printf - print given char* to stdout
  *
@@ -31,7 +35,10 @@ int _printf(const char *out, ...)
 					continue;
 				}
 			}
-			i++;
+			else
+			{
+				i++;
+			}
 		}
 		if (out[i] != '\0')
 			nb += _printc(out[i]);

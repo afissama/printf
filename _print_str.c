@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "main.h"
 /**
  * _printc - writes the character c to stdout
