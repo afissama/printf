@@ -69,3 +69,15 @@ int _strlen(char *s)
 
 	return (i);
 }
+
+/**
+ * _print_sr - return the length of parsing param
+ * @s: string passing pointer
+ *
+ * Return: length of s
+ */
+int _print_sr(char *s)
+{
+	rev_string(s);
+	return (_prints(s));
+}
