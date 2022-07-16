@@ -79,7 +79,7 @@ int check_frmt(char c, va_list ptr)
 		case 'b':
 			return (_printb(va_arg(ptr, unsigned int)));
 		case 'r':
-			return (_print_sr(va_arg(ptr, unsigned int)));
+			return (_print_sr(va_arg(ptr, char*)));
 		default:
 			return (-1);
 	}
